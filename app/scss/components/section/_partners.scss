@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use '../../util/variables' as *;
+
+.partners-secion {
+  padding: 40px 20px;
+  overflow: auto;
+  border-radius: 20px;
+  border: 1px solid color.adjust($white, $alpha: -.4);
+
+  scroll-snap-align: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+.partners-list {
+  display: flex;
+  gap: 40px;
+
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  font-family: $sans-bold;
+  flex-shrink: 0;
+
+
+
+  p {
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+}
