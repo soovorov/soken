@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+
+.breadcrumbs {
+  @include font-size(12);
+  margin: 40px 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: color.adjust($white, $alpha: -.6);
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  li + li {
+    &::before {
+      content: '/';
+      color: color.adjust($white, $alpha: -.8);
+      margin: 0 2px 0 4px;
+    }
+  }
+}
