@@ -1,0 +1,145 @@
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+@use 'sass:color';
+
+.site-header {
+  display: flex;
+  padding-top: 30px;
+}
+
+// Main navigation
+.main-nav {
+  margin-left: auto;
+  display: flex;
+
+  &__list,
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+
+  // Links
+  &__item {
+    margin: 0 5px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    &:hover {
+      //border-color: color.adjust($white, $alpha: -.9);
+
+      background: linear-gradient(
+          to right,
+          color.adjust($white, $alpha: -.95),
+          color.adjust($white, $alpha: -.99),
+      );
+    }
+  }
+
+  &__link {
+    padding: .5rem 1rem;
+    display: block;
+    color: $white;
+    line-height: 1.191;
+
+    &:hover {
+      color: $white;
+      //background: $color-main-gradient;
+      //background-clip: text;
+      //-webkit-text-fill-color: transparent;
+    }
+
+    //border: 1px solid color.adjust($white, $alpha: -.9);
+  }
+
+  &__contact-btn {
+    align-self: center;
+  }
+
+  .display-menu & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Toggle menu button
+.active-menu {
+
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  text-indent: -999em;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 222;
+
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $color-main;
+    transition: background-color .3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color-main;
+      transition-duration: .3s, .3s;
+    }
+
+    &::before {
+      top: -7px;
+      transition-property: top, transform;
+    }
+
+    &::after {
+      bottom: -7px;
+      transition-property: bottom, transform;
+    }
+  }
+
+  .display-menu & {
+    position: fixed;
+
+    span {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+
+    span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    span::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+.lang-switcher {
+  margin-left: 40px;
+}

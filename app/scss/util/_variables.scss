@@ -1,0 +1,58 @@
+@use 'sass:color';
+
+// Font weights
+$light: 300;
+$medium: 600;
+$bold: 700;
+
+// Fonts
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    //src: url($font-file+'.woff') format('woff'),
+    src: url($font-file + '.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font('Gilroy', '../fonts/Gilroy-Regular');
+@include font('Gilroy-Bold', '../fonts/Gilroy-Bold');
+
+$sans: 'Gilroy', sans-serif;
+$sans-bold: 'Gilroy-Bold', sans-serif;
+
+%accent-font {
+  font-family: $sans-bold;
+  font-weight: 700;
+}
+
+//  Colors
+$black: #000;
+$gray: #c2c2c2;
+$white: #fff;
+
+$color-main-gradient: linear-gradient(326.32deg, #273dd2 0%, #6bb9ec 77.5%, #7ac4f4 100%);
+
+$border-bg-gradient: linear-gradient(118.29deg, color.adjust($white, $alpha: -.9) 0%, color.adjust($white, $alpha: -.8) 100%);
+
+$item-gradient: linear-gradient(
+    to right,
+    color.adjust($white, $alpha: -.95),
+    color.adjust($white, $alpha: -.99),
+);
+
+
+$gray-darken: #3f3f3f;
+$gray-medium: #c5c5c5;
+$gray-light: #eae9e9;
+
+$color-main:  color.adjust($white, $alpha: -.4);
+$color-main:  color.adjust($white, $alpha: -.4);
+$color-secondary: #fff;
+$color-content: #212524;
+
+$color-background: #0C1525;
+
+
+$blue: #2476a0;

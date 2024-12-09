@@ -1,0 +1,102 @@
+//------------------------------------------------------------------------------
+// Abstract classes
+// Clearfix
+
+// Paste element after current content to clear both float.
+%group:after,
+.group:after {
+  clear: both;
+  content: '';
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+//------------------------------------------------------------------------------
+// Mixins
+
+// Font size
+@function calculateRem($size) {
+  @return calc($size / 16) * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+//--------------------------------
+// Links
+@mixin links($color: $black, $hover: $gray, $dec: false) {
+  color: $color;
+
+  @if $dec == true {
+    text-decoration: underline;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+
+  @if $dec == false {
+    text-decoration: none;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Media queries
+// Accept two parameters Point and MIN/MAX value
+// @example: @include media-q(min, 980);
+@mixin media-q($extrema: null, $point: null, $orient: null) {
+
+  @if $extrema == 'min' {
+    $extrema: min;
+  }
+
+  @if $extrema == 'max' {
+    $extrema: max;
+  }
+
+  @if $orient == 'p' {
+    $orient: portrait
+  }
+
+  @if $orient == 'l' {
+    $orient: landscape
+  }
+
+  @if $orient == null {
+    @media only screen and (#{$extrema}-width: $point+'px') {
+      @content;
+    }
+  } @else {
+    @media only screen and (#{$extrema}-width: $point+'px') and (orientation: #{$orient}) {
+      @content;
+    }
+  }
+}
+
+//--------------------------------
+// CSS3 Animation
+@mixin transition($property: all, $duration: .3s, $ease: ease-out) {
+  transition: $property $duration $ease;
+}
+
+//--------------------------------
+// Gradients
+@mixin gradient($color-start: #fff, $color-end: #fcfcfc, $orientation: to top) {
+   background: linear-gradient($orientation, $color-start 0%, $color-end 100%);
+}
+
+// Reset base list style for list items
+%reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+

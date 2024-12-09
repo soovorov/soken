@@ -1,0 +1,46 @@
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+@use '../../util/font-icons' as *;
+
+// Main buttons
+%btn,
+.btn {
+  @include font-size(16);
+  font-family: $sans-bold;
+  display: inline-block;
+  color: $white;
+  border-radius: 18px;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  &:hover{
+    color: $white;
+  }
+}
+
+.btn-link {
+  color: transparent;
+  background: $color-main-gradient;
+  background-clip: text;
+}
+
+.btn-gradient {
+  padding: .5rem 1rem;
+  font-family: $sans-bold;
+  color: $color-background;
+  background: $color-main-gradient;
+  border-radius: 10px;
+  margin-left: 40px;
+
+  &:hover {
+    color: $color-background;
+  }
+}
+
+.btn-s {
+  @include font-size(14);
+}
+
+.btn-m {
+  @include font-size(16);
+}

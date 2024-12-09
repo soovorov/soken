@@ -1,0 +1,65 @@
+@use  '../util/variables' as *;
+@use  '../util/mixins' as *;
+@use  'sass:color';
+
+.page-section {
+  color: $color-main;
+}
+
+.block-statistic {
+  display: flex;
+  padding: 21px 40px;
+  background: $item-gradient;
+  border-radius: 20px;
+  border: 1px solid color.adjust($color-main, $alpha: -.5);
+}
+
+.statistic-item {
+  .number {
+    @include font-size(34);
+    font-family: $sans-bold;
+    margin-bottom: 10px;
+    background: $color-main-gradient;
+    background-clip: text;
+  }
+
+  .label {
+    @include font-size(14);
+    color: $white;
+  }
+
+  & + .statistic-item {
+    position: relative;
+    margin-left: 60px;
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: -30px;
+      background: $border-bg-gradient;
+    }
+  }
+}
+
+.intro {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+
+  h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    @include font-size(18);
+    line-height: 1.6;
+  }
+
+  .block-info {
+    max-width: 480px;
+  }
+}

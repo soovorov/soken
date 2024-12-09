@@ -1,0 +1,50 @@
+@use 'sass:color';
+@use  '../../util/variables' as *;
+@use  '../../util/mixins' as *;
+
+.page-section {
+  padding: var(--default-indent) 0;
+}
+
+.section-columns {
+  display: flex;
+  gap: 80px;
+}
+
+.section-with-bg {
+  background: $item-gradient;
+}
+
+.audit-reports {
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  gap: 80px;
+
+  .block-image {
+    max-width: 440px;
+    flex-shrink: 0;
+  }
+
+  .block-info {
+    padding: 100px 0;
+  }
+}
+
+.report-benefits {
+  @include font-size(18);
+  line-height: 1.6;
+  margin: 1.875rem 0;
+  color: $white;
+
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.audit-actions {
+  .btn-gradient {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}

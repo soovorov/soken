@@ -1,0 +1,54 @@
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+
+:root {
+  --default-indent: 100px;
+}
+
+//------------------------------------------------------------------------------
+// Website global styles.
+
+* {
+  box-sizing: border-box;
+}
+
+//------------------------------------------------------------------------------
+// Styles for html and body tags.
+html,
+body {
+  font-family: $sans;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  color: $white;
+  background-color: $color-background;
+  min-width: 320px;
+  line-height: 1.4;
+}
+
+// Reset default list styles
+ul,
+ol {
+  @extend %reset-list;
+}
+
+a {
+  @include transition();
+}
+
+img {
+  display: inherit;
+  height: auto;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

@@ -1,0 +1,104 @@
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %accent-font;
+  color: $white;
+  margin-top: 0;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+h1 {
+  @include font-size(50);
+  margin-bottom: .5em;
+}
+
+h2 {
+  @include font-size(42);
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  @include font-size(20);
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  @include font-size(16);
+  margin-top: 0;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.node-page{
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  p {
+    margin-bottom: 1.5em;
+  }
+
+  ul,
+  ol {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+
+
+    li {
+      margin-bottom: .5rem;
+
+      &::before {
+        margin-left: -1rem;
+      }
+    }
+  }
+
+  // Ordered list items
+  ol {
+    counter-reset: list 0;
+
+    li::before {
+      counter-increment: list;
+      content: counter(list) ". ";
+      color: $color-main;
+      font-weight: $medium;
+    }
+  }
+
+  // Unordered list items
+  ul {
+    li::before {
+      content: ' ';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 5px;
+      height: 5px;
+      background-color: $color-main;
+      border-radius: 50%;
+    }
+  }
+
+  // Divider
+  hr {
+    margin: 0 0 1.5rem;
+    border: 0;
+    background: $color-content;
+    height: 1px;
+  }
+}
+
+a {
+  @include links($color-main, $color-secondary);
+}

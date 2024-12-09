@@ -1,0 +1,52 @@
+@use 'sass:color';
+@use '../../util/variables' as *;
+
+.accordion {
+
+  ~ .accordion {
+    margin: 30px 0;
+    padding-top: 30px;
+    border-top: 1px solid color.adjust($white, $alpha: -.6);
+  }
+
+  &-header {
+    margin-bottom: 0;
+    line-height: 2.5rem;
+    position: relative;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 1px;
+      height: 16px;
+      background-color: $white;
+      transition: transform .3s ease;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(0);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &.active::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
+
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease, margin-top .3s ease;
+
+    &.active {
+      margin-top: 20px;
+    }
+  }
+}
