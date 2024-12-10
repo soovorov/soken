@@ -17,6 +17,7 @@
 .statistic-item {
   .number {
     @include font-size(34);
+    color: transparent;
     font-family: $sans-bold;
     margin-bottom: 10px;
     background: $color-main-gradient;
