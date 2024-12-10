@@ -13,6 +13,7 @@
 
   &__top_menu {
     padding: var(--default-indent) 0 80px;
+    display: flex;
   }
 
   &__blocks-list {
@@ -88,14 +89,23 @@
       align-items: center;
       line-height: 26px;
 
-      .icon-square {
+      .user {
+        color: transparent;
+        background: $color-main-gradient;
+        background-clip: text;
         margin-right: 10px;
+        padding: .25rem;
+
+        &::before {
+          @include font-size(18);
+        }
       }
 
       &:hover {
-        .icon-square {
-          background-image: $color-main-gradient;
-          border-color: transparent;
+        .user {
+          background: $color-main-gradient;
+          color: $color-background;
+          border-color: $color-background;
         }
       }
     }
@@ -115,36 +125,57 @@
   text-align: right;
 }
 
-.social-list {
-  li {
-    display: inline-block;
-    margin-left: 10px;
-    text-align: left;
-  }
+.social {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
 
-  a {
-    height: 42px;
-    width: 42px;
-    font-size: 0;
+  &-email {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid $color-main;
 
-    &::before {
-      @extend %font-icon;
-      @include font-size(23);
-    }
-
-    &:hover {
-      color: $white;
-      background-color: $color-main;
+    .icon-square {
+      margin-right: 10px;
+      padding: 0;
+      height: 26px;
+      width: 26px;
     }
   }
 
-  .facebook {
-    background-position: 0 -62px;
+  &-list {
+    margin-left: 60px;
+
+    li {
+      display: inline-block;
+      margin-left: 10px;
+      text-align: left;
+    }
+
+    a {
+
+      &::before {
+        @extend %font-icon;
+        @include font-size(22);
+        color: transparent;
+        background: $color-main-gradient;
+        background-clip: text;
+        transition: color .3s ease, background .3s ease;
+      }
+
+      &:hover {
+        background: $color-main-gradient;
+        border-color: $color-background;
+
+        &::before {
+          color: $color-background;
+        }
+      }
+    }
+
+    .icon-square {
+      padding: .5rem;
+      border-radius: 10px;
+    }
   }
 }
 

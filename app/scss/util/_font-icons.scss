@@ -5,11 +5,7 @@
 // All icons font set
 @font-face {
   font-family: 'font-icon';
-  src: url('../f-icons/f-icons.eot');
-  src: url('../f-icons/f-icons.eot?#iefix') format('embedded-opentype'),
-  url('../f-icons/f-icons.woff') format('woff'),
-  url('../f-icons/f-icons.ttf') format('truetype'),
-  url('../f-icons/f-icons#font-icons') format('svg');
+  src: url('../f-icons/general-icons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,24 +34,55 @@
 }
 
 // Icons set
-%icon-arrow {
+%arrow-right {
   content: '\e900';
 }
 
-%icon-fb {
-  content: '\e90d';
-}
-
-%icon-vk {
+%linkedIn {
   content: '\e901';
 }
 
+%user {
+  content: '\e902';
+}
+
+%tg {
+  content: '\e903';
+}
+
+%x {
+  content: '\e904';
+}
+
+.x {
+  &::before {
+    @extend %x;
+  }
+}
+
+.tg {
+  &::before {
+    @extend %tg;
+  }
+}
+
+.linkedIn {
+  &::before {
+    @extend %linkedIn;
+  }
+}
+
+.user {
+  &::before {
+    @extend %user;
+  }
+}
 
 .icon-square {
-  display: inline-block;
-  padding: .45rem;
+  display: inline-flex;
+  align-items: center;
+  padding: .5625rem;
+  justify-content: center;
   border: 1px solid color.adjust($white, $alpha: -.6);
   border-radius: 5px;
-  width: 26px;
-  height: 26px;
 }
