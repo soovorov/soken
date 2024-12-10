@@ -1,0 +1,27 @@
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.page-not-found {
+  &__container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  &__image {
+    margin-bottom: 60px;
+  }
+
+  &__content {
+    @include font-size(18);
+    text-align: center;
+    color: $white;
+
+    p {
+      margin-bottom: 50px;
+    }
+
+    .btn-link {
+      font-family: $sans-bold;
+    }
+  }
+}
