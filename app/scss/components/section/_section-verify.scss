@@ -52,7 +52,8 @@
 .member-status {
   display: flex;
   justify-content: center;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
+  align-self: center;
 
   &__image {
     padding: 40px 65px 50px;

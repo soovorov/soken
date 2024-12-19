@@ -150,4 +150,45 @@
 
 .lang-switcher {
   margin-left: 40px;
+  position: relative;
+
+  &:hover {
+    .lang-switcher-current {
+      background: $item-gradient;
+    }
+    .lang-switcher-list-container {
+      display: block;
+    }
+  }
+
+  img {
+    margin-right: .5rem;
+  }
+
+  &-current {
+    display: flex;
+    padding: 6px 10px;
+    border-radius: 99rem;
+    cursor: pointer;
+  }
+
+  &-list-container {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding-top: 10px;
+    display: none;
+  }
+
+  &-list {
+    min-width: 120px;
+    border-radius: 10px;
+    background: $item-gradient;
+    padding: 6px 10px;
+  }
+
+  &-item {
+    display: flex;
+    cursor: pointer;
+  }
 }

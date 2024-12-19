@@ -3,7 +3,11 @@
 @use  '../../util/mixins' as *;
 
 .page-section {
-  padding: var(--default-indent) 0;
+  padding: var(--mobile-indent) 0;
+
+  @include media-q(min, 768) {
+    padding: var(--default-indent) 0;
+  }
 }
 
 .section-columns {

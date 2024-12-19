@@ -114,11 +114,20 @@
 
 .related-services {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 10px;
+
+  @include media-q(min, 768) {
+    flex-direction: row;
+    gap: 40px;
+  }
 
   &__item {
-    flex-basis: calc(33% - 40px);
     display: flex;
+
+    @include media-q(min, 768) {
+      flex-basis: calc(33% - 40px);
+    }
   };
 
   &__link {

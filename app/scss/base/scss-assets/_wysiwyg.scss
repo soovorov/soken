@@ -15,13 +15,21 @@ h6 {
 }
 
 h1 {
-  @include font-size(50);
+  @include font-size(34);
   margin-bottom: .5em;
+
+  @include media-q(min, 768) {
+    @include font-size(50);
+  }
 }
 
 h2 {
-  @include font-size(42);
+  @include font-size(26);
   margin-bottom: 2.5rem;
+
+  @include media-q(min, 768) {
+    @include font-size(42);
+  }
 }
 
 h3 {
@@ -36,7 +44,11 @@ p {
 }
 
 .mb-100 {
-  margin-bottom: 100px;
+  margin-bottom: var(--mobile-indent);
+
+  @include media-q(min, 768) {
+    margin-bottom: var(--default-indent);
+  }
 }
 
 .node-page{
