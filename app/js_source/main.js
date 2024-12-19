@@ -18,23 +18,24 @@
   }
 
   // Side Menu
-  // Вибірка посилань з меню
+  // Select side menu links
   const menuLinks = document.querySelectorAll('.anchor__trigger');
 
-// Функція плавного скролу
+  // Click per menu item
   menuLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
 
-      // Плавний скрол
+      // Scroll to the target
       targetSection.scrollIntoView({
         behavior: 'smooth'
       });
     });
   });
 
+  // Highlight section on scroll.
   window.addEventListener('scroll', () => {
     let currentSection = '';
 
@@ -54,6 +55,18 @@
         link.classList.add('active');
       }
     });
+  });
+
+  // Custom image replacement on member form, only for the demo [Remove later]
+  const form = document.querySelector('.form');
+  const formImg = document.querySelector('.status-image');
+  const formContainer = document.querySelector('.verify-form');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    // Simulate success submit
+    formImg.src = './images/member/success.svg';
+    formContainer.classList.add('submit-success');
   });
 
 })();

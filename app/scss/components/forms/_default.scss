@@ -1,0 +1,22 @@
+@use '../buttons/buttons' as *;
+@use '../../util/mixins' as *;
+
+.form {
+
+  .verify-form & {
+    max-width: 325px;
+  }
+
+  input[type='submit'] {
+    @include font-size(14);
+    @extend %btn-gradient;
+    border: 0;
+    width: 100%;
+    margin-left: 0;
+    padding: .5rem;
+  }
+}
+
+.form-item {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,62 @@
+@use 'sass:color';
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+
+.section-verify {
+  display: flex;
+  gap: 80px;
+
+  .success-message {
+    font-family: $sans-bold;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 1.875rem 2.5rem;
+    margin-top: 60px;
+    display: none;
+
+    img {
+      margin-right: 20px;
+    }
+
+    p {
+      @include font-size(18);
+      color: $black;
+      margin: 0;
+      line-height: 2.5;
+    }
+  }
+
+  .submit-success {
+    .success-message {
+      display: flex;
+    }
+
+    .form {
+      display: none;
+    }
+  }
+}
+
+.verify-form {
+  max-width: 480px;
+
+  p {
+    @include font-size(18);
+  }
+
+  .form {
+    margin-top: 60px;
+  }
+}
+
+.member-status {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+
+  &__image {
+    padding: 40px 65px 50px;
+    border: 1px solid color.adjust($white, $alpha: -.8);
+    border-radius: 20px;
+  }
+}

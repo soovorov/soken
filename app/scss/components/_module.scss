@@ -1,4 +1,5 @@
 @use 'section/section';
+@use 'section/section-verify';
 @use 'header/header';
 @use 'footer/footer';
 @use 'buttons/buttons';
@@ -8,3 +9,4 @@
 @use 'accordion/accordion';
 @use 'section/partners';
 @use 'breadcrumbs/breadcrumbs';
+@use 'forms/module';

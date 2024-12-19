@@ -1,0 +1,28 @@
+@use 'sass:color';
+@use '../../util/variables' as *;
+@use '../../util/mixins' as *;
+
+.item-type-text {
+
+}
+
+
+input[type='text'] {
+  @include font-size(14);
+  color: color.adjust($white, $alpha: -.4);
+  font-family: $sans;
+  background: $item-gradient;
+  border: 1px solid color.adjust($white, $alpha: -.8);
+  border-radius: 10px;
+  width: 100%;
+  padding: .585rem 1rem;
+  transition: color .3s ease, border-color .3s ease;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $white;
+    border: 1px solid color.adjust($white, $alpha: -.4);
+    outline: none;
+  }
+}
