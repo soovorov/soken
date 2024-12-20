@@ -4,7 +4,12 @@
 
 .section-verify {
   display: flex;
-  gap: 80px;
+  flex-direction: column;
+
+  @include media-q(min, 768) {
+    flex-direction: row;
+    gap: 80px;
+  }
 
   .success-message {
     font-family: $sans-bold;
@@ -54,6 +59,13 @@
   justify-content: center;
   flex: 1 0 auto;
   align-self: center;
+  margin-bottom: 40px;
+  order: -1;
+
+  @include media-q(min, 768) {
+    order: initial;
+    margin-bottom: 0;
+  }
 
   &__image {
     padding: 40px 65px 50px;

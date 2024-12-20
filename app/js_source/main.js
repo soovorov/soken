@@ -57,6 +57,20 @@
     });
   });
 
+  // Mobile menu
+  const menuToggleBtn = document.querySelector('.js-menu-toggle');
+  const header = document.querySelector('.js-site-header');
+
+  menuToggleBtn.addEventListener('click', e => {
+    e.preventDefault();
+    header.classList.toggle('show-menu');
+    bodyScrollLock.disableBodyScroll(header);
+
+    if (!header.classList.contains('show-menu')) {
+      bodyScrollLock.enableBodyScroll(header);
+    }
+  });
+
   // Custom image replacement on member form, only for the demo [Remove later]
   const form = document.querySelector('.form');
   const formImg = document.querySelector('.status-image');

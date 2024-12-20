@@ -79,14 +79,23 @@
 
       img {
         margin-right: 20px;
+        max-width: var(--mobile-indent);
+
+        @include media-q(min, 768) {
+          max-width: none;
+        }
       }
 
       &__title {
-        @include font-size(26);
+        @include font-size(20);
         color: $white;
         font-family: $sans-bold;
         display: block;
         margin-bottom: 10px;
+
+        @include media-q(min, 768) {
+          @include font-size(26);
+        }
       }
     }
   }
@@ -181,7 +190,10 @@
   }
 
   &-list {
-    margin-left: 60px;
+
+    @include media-q(min, 768) {
+      margin-left: 60px;
+    }
 
     li {
       display: inline-block;
