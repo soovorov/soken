@@ -78,7 +78,7 @@
     function initSlider() {
       if (window.innerWidth < 768 && !slider) {
         slider = new Splide('#mobile-slider', {
-          type: 'slide',
+          type: 'loop',
           fixedWidth : '320px',
           gap        : '20px',
           perPage: 1,
