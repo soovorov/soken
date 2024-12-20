@@ -1,20 +1,63 @@
+@use 'sass:color';
 @use '../../util/variables' as *;
 @use '../../util/mixins' as *;
 
 .cards-list {
-  display: flex;
-  gap: 30px;
+  @include media-q(min, 768) {
+    display: flex !important;
+    gap: 30px;
+  }
+}
+
+#mobile-slider {
+  max-width: 320px;
+  margin: 0 auto;
+
+  @include media-q(min, 768) {
+    max-width: none;
+    margin: 0;
+  }
+
+  .splide__pagination {
+    bottom: -40px;
+
+    li {
+      width: 60px;
+      margin: 0 5px;
+    }
+
+    &__page {
+      width: 100%;
+      border-radius: 2px;
+      height: 2px;
+      background: color.adjust($white, $alpha: -.8);
+      transition: background .3s ease;
+      margin: 0;
+
+      &:hover {
+        background: color.adjust($white, $alpha: -.1);
+      }
+
+      &.is-active {
+        transform: none;
+        background: $color-main-gradient;
+      }
+    }
+  }
 }
 
 .card {
   &-item {
-    flex-basis: 33%;
     overflow: hidden;
     border-radius: 20px;
     background: $item-gradient;
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @include media-q(min, 768) {
+      flex-basis: calc(33% - 20px);
+    }
   }
 
   &-top {

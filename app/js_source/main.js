@@ -71,6 +71,31 @@
     }
   });
 
+  // Slider
+  document.addEventListener('DOMContentLoaded', () => {
+    let slider = null;
+
+    function initSlider() {
+      if (window.innerWidth < 768 && !slider) {
+        slider = new Splide('#mobile-slider', {
+          type: 'slide',
+          fixedWidth : '320px',
+          gap        : '20px',
+          perPage: 1,
+          pagination: true,
+          arrows: false,
+          autoplay: true,
+        }).mount();
+      } else if (window.innerWidth >= 768 && slider) {
+        slider.destroy();
+        slider = null;
+      }
+    }
+
+    window.addEventListener('resize', initSlider);
+    initSlider();
+  });
+
   // Custom image replacement on member form, only for the demo [Remove later]
   const form = document.querySelector('.form');
   const formImg = document.querySelector('.status-image');

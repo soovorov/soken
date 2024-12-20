@@ -13,6 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Soken" />
   <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -353,69 +354,72 @@
     </section>
     <section class="page-section">
       <h2 class="mb-100">Blog</h2>
-
-      <ul class="blogs-list cards-list">
-        <li class="card-item">
-          <div class="card-top">
-            <img src="./images/blog_img_1.svg" alt="">
-          </div>
-          <div class="card-info">
-            <h3 class="card-title">Soken Ethical Hacking In Action</h3>
-            <div class="card-meta">
-              <span class="time-to-read">8 min</span>
-              <span class="card-date">12 November 24</span>
-              <ul class="tags-list">
-                <li class="tag">Case study</li>
-              </ul>
-            </div>
-          </div>
-          <a href="" class="card-link">
-            <span class="visibility-hidden">
-              More about Soken Ethical Hacking In Action
-            </span>
-          </a>
-        </li>
-        <li class="card-item">
-          <div class="card-top">
-            <img src="./images/blog_img_2.svg" alt="">
-          </div>
-          <div class="card-info">
-            <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</h3>
-            <div class="card-meta">
-              <span class="time-to-read">8 min</span>
-              <span class="card-date">12 November 24</span>
-              <ul class="tags-list">
-                <li class="tag">Case study</li>
-              </ul>
-            </div>
-          </div>
-          <a href="" class="card-link">
-            <span class="visibility-hidden">
-              More about Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract
-            </span>
-          </a>
-        </li>
-        <li class="card-item">
-          <div class="card-top">
-            <img src="./images/blog_img_3.svg" alt="">
-          </div>
-          <div class="card-info">
-            <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M </h3>
-            <div class="card-meta">
-              <span class="time-to-read">8 min</span>
-              <span class="card-date">12 November 24</span>
-              <ul class="tags-list">
-                <li class="tag">Insights</li>
-              </ul>
-            </div>
-          </div>
-          <a href="" class="card-link">
-            <span class="visibility-hidden">
-              More about Ethical Hacking In Action: How To Steal $1.1M
-            </span>
-          </a>
-        </li>
-      </ul>
+      <div id="mobile-slider" class="splide">
+        <div class="splide__track">
+          <ul class="blogs-list cards-list splide__list">
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_1.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Soken Ethical Hacking In Action</h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Case study</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="" class="card-link">
+                <span class="visibility-hidden">
+                  More about Soken Ethical Hacking In Action
+                </span>
+              </a>
+            </li>
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_2.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Case study</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="" class="card-link">
+                <span class="visibility-hidden">
+                  More about Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract
+                </span>
+              </a>
+            </li>
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_3.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M </h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Insights</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="" class="card-link">
+                <span class="visibility-hidden">
+                  More about Ethical Hacking In Action: How To Steal $1.1M
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </div>
 </main>
@@ -531,6 +535,7 @@
 </footer>
 
 <script async src="js/bodyScrollLock.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
 <script defer src="js/main.js"></script>
 
 </body>
