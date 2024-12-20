@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use '../../util/variables' as *;
+@use '../../util/mixins' as *;
 
 .partners-secion {
   padding: 40px 20px;
@@ -18,7 +19,15 @@
 
 .partners-list {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-width: 150vw;
+
+  @include media-q(min, 768) {
+    flex-wrap: nowrap;
+    min-width: auto;
+    gap: 40px;
+  }
 }
 
 .partner {
