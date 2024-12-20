@@ -16,6 +16,10 @@
   @include media-q(min, 768) {
     max-width: none;
     margin: 0;
+
+    &.splide {
+      visibility: visible;
+    }
   }
 
   .splide__pagination {
