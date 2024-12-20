@@ -76,14 +76,22 @@
   &__item {
     margin-bottom: 10px;
     border-radius: 20px;
-    padding: 40px;
+    padding: 20px;
+
+    @include media-q(min, 768) {
+      padding: 40px;
+    }
 
     img {
       margin-bottom: 30px;
     }
 
     h3 {
-      @include font-size(26);
+      @include font-size(20);
+
+      @include media-q(min, 768) {
+        @include font-size(26);
+      }
     }
   }
 
