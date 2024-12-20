@@ -62,11 +62,13 @@
   const formImg = document.querySelector('.status-image');
   const formContainer = document.querySelector('.verify-form');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // Simulate success submit
-    formImg.src = './images/member/success.svg';
-    formContainer.classList.add('submit-success');
-  });
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Simulate success submit
+      formImg.src = './images/member/success.svg';
+      formContainer.classList.add('submit-success');
+    });
+  }
 
 })();

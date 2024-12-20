@@ -4,17 +4,34 @@
 
 .anchor {
   &__list {
-    min-width: 480px;
-    width: 100%;
+    min-width: 320px;
     align-self: flex-start;
     position: sticky;
     top: 0;
     text-transform: uppercase;
+    overflow: auto;
+    background-color: $color-background;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    z-index: 1;
+
+    @include media-q(min, 768) {
+      overflow: hidden;
+    }
+
+    @include media-q(min, 991) {
+      width: 100%;
+      min-width: 480px;
+    }
 
     &-container {
       display: flex;
-      align-items: center;
-      flex-direction: column;
+
+      @include media-q(min, 768) {
+        align-items: center;
+        flex-direction: column;
+      }
     }
 
     &-item {
