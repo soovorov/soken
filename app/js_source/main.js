@@ -21,6 +21,13 @@
   // Select side menu links
   const menuLinks = document.querySelectorAll('.anchor__trigger');
 
+  const anchorsList = document.querySelector('.anchor__list');
+  let menuOffset = 0;
+
+  if (window.innerWidth < 768 && anchorsList) {
+    menuOffset = anchorsList.getBoundingClientRect().height;
+  }
+
   // Click per menu item
   menuLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -28,10 +35,18 @@
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
 
-      // Scroll to the target
-      targetSection.scrollIntoView({
-        behavior: 'smooth'
-      });
+      if (window.innerWidth < 768) {
+        window.scrollTo({
+          top: targetSection.offsetTop - menuOffset + 5,
+          behavior: 'smooth',
+        })
+      } else {
+        // Scroll to the target
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     });
   });
 
@@ -41,9 +56,8 @@
 
     document.querySelectorAll('.anchor__item').forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
 
-      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+      if (window.scrollY >= sectionTop - menuOffset) {
         currentSection = section.getAttribute('id');
       }
     });
@@ -51,8 +65,16 @@
     // Оновити активний елемент меню
     menuLinks.forEach(link => {
       link.classList.remove('active');
+
       if (link.getAttribute('href').substring(1) === currentSection) {
         link.classList.add('active');
+
+        if (window.innerWidth < 768) {
+          anchorsList.scrollTo({
+            left: link.offsetLeft,
+            behavior: 'smooth',
+          });
+        }
       }
     });
   });
@@ -96,7 +118,8 @@
     initSlider();
   });
 
-  // Custom image replacement on member form, only for the demo [Remove later]
+  // Custom image replacement on member form.
+  // @todo: Remove, only for the demo.
   const form = document.querySelector('.form');
   const formImg = document.querySelector('.status-image');
   const formContainer = document.querySelector('.verify-form');

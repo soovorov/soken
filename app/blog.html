@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Soken | Sercives | Single service</title>
+  <title>Soken | Blogs| Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</title>
 
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -13,6 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Soken" />
   <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -41,11 +42,11 @@
             <li class="main-nav__item">
               <a href="about.html" class="main-nav__link">About us</a>
             </li>
-            <li class="main-nav__item active">
-              <a href="services.html" class="main-nav__link active">Services</a>
-            </li>
             <li class="main-nav__item">
-              <a href="blogs.html" class="main-nav__link">Blog</a>
+              <a href="services.html" class="main-nav__link">Services</a>
+            </li>
+            <li class="main-nav__item active">
+              <a href="blogs.html" class="main-nav__link active">Blog</a>
             </li>
           </ul>
           <div class="lang-switcher">
@@ -80,17 +81,17 @@
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="services.html">Services</a>
+          <a href="blogs.html">Blogs</a>
         </li>
         <li>
-          <span>Single Service</span>
+          <span>Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</span>
         </li>
       </ul>
     </div>
 
     <article class="basic-page">
       <header class="basic-page-header">
-        <h1>Token sale agreements</h1>
+        <h1>Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</h1>
       </header>
       <div class="page-content">
         <p>
@@ -112,25 +113,75 @@
         </p>
       </div>
     </article>
+
     <section class="page-section">
-      <h2 class="mb-100">Related Services</h2>
-      <ul class="related-services">
-        <li class="related-services__item">
-          <a href="service.html" class="related-services__link">
-            Token sale agreements
-          </a>
-        </li>
-        <li class="related-services__item">
-          <a href="service.html" class="related-services__link">
-            SAFT agreement for strategic investments
-          </a>
-        </li>
-        <li class="related-services__item">
-          <a href="service.html" class="related-services__link">
-            Shareholder agreement
-          </a>
-        </li>
-      </ul>
+      <h2 class="mb-100">More blogs</h2>
+      <div id="mobile-slider" class="splide">
+        <div class="splide__track">
+          <ul class="blogs-list cards-list splide__list">
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_1.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Soken Ethical Hacking In Action</h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Case study</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="blog.html" class="card-link">
+                <span class="visibility-hidden">
+                  More about Soken Ethical Hacking In Action
+                </span>
+              </a>
+            </li>
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_2.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract</h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Case study</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="blog.html" class="card-link">
+                <span class="visibility-hidden">
+                  More about Ethical Hacking In Action: How To Steal $1.1M From A DeFi Smart Contract
+                </span>
+              </a>
+            </li>
+            <li class="card-item splide__slide">
+              <div class="card-top">
+                <img src="./images/blog_img_3.svg" alt="">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">Ethical Hacking In Action: How To Steal $1.1M </h3>
+                <div class="card-meta">
+                  <span class="time-to-read">8 min</span>
+                  <span class="card-date">12 November 24</span>
+                  <ul class="tags-list">
+                    <li class="tag">Insights</li>
+                  </ul>
+                </div>
+              </div>
+              <a href="blog.html" class="card-link">
+                <span class="visibility-hidden">
+                  More about Ethical Hacking In Action: How To Steal $1.1M
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </div>
 </main>
@@ -246,6 +297,7 @@
 </footer>
 
 <script async src="js/bodyScrollLock.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
 <script defer src="js/main.js"></script>
 </body>
 </html>

@@ -9,6 +9,20 @@
   }
 }
 
+.blogs {
+  .blogs-list {
+    flex-wrap: wrap;
+  }
+
+  .card-item {
+    margin-bottom: 40px;
+
+    @include media-q(min, 768) {
+      margin-bottom: 0;
+    }
+  }
+}
+
 #mobile-slider {
   max-width: 320px;
   margin: 0 auto;

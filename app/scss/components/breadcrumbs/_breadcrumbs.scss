@@ -9,6 +9,7 @@
   &__list {
     display: flex;
     align-items: center;
+    white-space: nowrap;
   }
 
   a {
@@ -19,11 +20,18 @@
     }
   }
 
-  li + li {
-    &::before {
-      content: '/';
-      color: color.adjust($white, $alpha: -.8);
-      margin: 0 2px 0 4px;
+  li {
+    &:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    + li {
+      &::before {
+        content: '/';
+        color: color.adjust($white, $alpha: -.8);
+        margin: 0 2px 0 4px;
+      }
     }
   }
 }
